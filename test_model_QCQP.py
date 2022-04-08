@@ -74,7 +74,7 @@ m.update()
 for mthd in mthds:
     print(f'Commencing method {mthd_name_strs[mthd]}')
     mdl_holder = Model_qcqp(m, L=L, L1=L1, ldas=ldas, method=mthd,
-                            disc_left=disc_left, disc_right=disc_right, st_do_approx=0)
+                            disc_left=disc_left, disc_right=disc_right)
 
     mdl = mdl_holder.mdl
 
