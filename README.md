@@ -6,7 +6,7 @@ The class is titled Model_qcqp.py. To obtain a MIP-relaxes model for the QCQP, c
 from gurobipy import *
 from Model_qcqp import Model_qcqp
 
-# Create the model
+## Create the model
 m = Model()
 
 x = m.addVar(lb=1, ub=3, name='x')
@@ -17,11 +17,11 @@ m.setObjective(-(x-.35)**2 + (y-.48)**2 - (z-.74)**2 - 5*x*y - 2*x*z - 2*y*z)
 m.addConstr(x+y+z <= 5.5)
 m.update()
 
-# Convert the model
+## Convert the model
 mdl_holder = Model_qcqp(m)
 mdl = mdl_holder.mdl
 
-# Optimize the model
+## Optimize the model
 mdl.optimize()
 
 For more usage information, see the example code in test_model_QCQP.py. 
@@ -33,6 +33,7 @@ To use this class, construct a Gurobi_2_Pyomo object, passing in the original mo
 from Gurobi_2_Pyomo import *
 from gurobipy import *
 
+## Create the model
 gm = Model()
 
 x = gm.addVar(vtype=GRB.BINARY)
@@ -45,6 +46,7 @@ gm.setObjective(x**2-2*x*y+z**2-z*x)
 
 gm.update()
 
+## Convert and display the model
 G2P = Gurobi_2_Pyomo(gm)
 G2P.convert_model()
 
