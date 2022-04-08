@@ -1,5 +1,3 @@
-from glob import glob as glb
-from os import path
 from gurobipy import *
 from Model_qcqp import Model_qcqp
 
