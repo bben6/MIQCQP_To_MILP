@@ -1,8 +1,6 @@
 from gurobipy import *
 from Model_qcqp import Model_qcqp
 
-fsplit = path.splitext
-
 # Flags
 UNIVAR = Model_qcqp.UNIVAR
 NMDT = Model_qcqp.NMDT
